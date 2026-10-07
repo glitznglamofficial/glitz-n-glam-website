@@ -1,0 +1,6 @@
+{
+  "name": "Glitz n Glam | Anti-Tarnish Jewellery Journal",
+  "description": "Editorial blog and style guides by Glitz n Glam, exploring waterproof, sweat-resistant, and hypoallergenic 18K gold anti-tarnish jewellery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
