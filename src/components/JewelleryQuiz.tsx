@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { CleanLink } from './CleanLink';
 
 interface JewelleryQuizProps {
-  onSelectArticle: (articleId: string) => void;
+  onSelectArticle: (articleIdOrSlug: string) => void;
 }
 
 export const JewelleryQuiz: React.FC<JewelleryQuizProps> = ({ onSelectArticle }) => {
@@ -13,23 +14,23 @@ export const JewelleryQuiz: React.FC<JewelleryQuizProps> = ({ onSelectArticle })
       id: 0,
       title: 'The 24/7 Active Wearer',
       description: 'You shower, work out, swim, and sleep in your jewels with zero desire to remove them daily.',
-      recommendedArticleId: '3', // 7-Piece Everyday Capsule
-      articleTitle: 'The 7-Piece Everyday Jewellery Capsule',
+      recommendedSlug: 'waterproof-gym-jewellery',
+      articleTitle: 'Sweat-Proof & Ocean-Ready: Waterproof Gym Jewellery',
       badge: 'Capsule Routine',
     },
     {
       id: 1,
       title: 'The Sensitive Skin Seeker',
       description: 'Tired of red itchy earlobes, contact rashes, or dark green discoloration on your skin.',
-      recommendedArticleId: '5', // Hypoallergenic Guide
-      articleTitle: 'Hypoallergenic & Sensitive Skin Guide',
+      recommendedSlug: 'hypoallergenic-jewellery-guide',
+      articleTitle: 'Hypoallergenic Jewellery & Sensitive Skin Guide',
       badge: 'Medical-Grade Purity',
     },
     {
       id: 2,
       title: 'The Style & Layering Enthusiast',
       description: 'You love stacking rings, mixing chain weights, and mastering tangle-free necklace stacks.',
-      recommendedArticleId: '6', // Art of Necklace Layering
+      recommendedSlug: 'necklace-layering-guide',
       articleTitle: 'Mastering the Art of Necklace Layering',
       badge: 'Pro Styling Tips',
     },
@@ -37,7 +38,7 @@ export const JewelleryQuiz: React.FC<JewelleryQuizProps> = ({ onSelectArticle })
       id: 3,
       title: 'The Materials & Science Inquirer',
       description: 'You want the hard facts: atomic bonding, PVD vacuum chambers, and 10x durability proof.',
-      recommendedArticleId: '1', // PVD Science
+      recommendedSlug: 'science-pvd-coating',
       articleTitle: 'The Science of Anti-Tarnish & PVD Coating',
       badge: 'Metallurgy Focus',
     },
@@ -111,13 +112,14 @@ export const JewelleryQuiz: React.FC<JewelleryQuizProps> = ({ onSelectArticle })
               {personas[selectedPersona].articleTitle}
             </h4>
           </div>
-          <button
-            onClick={() => onSelectArticle(personas[selectedPersona].recommendedArticleId)}
+          <CleanLink
+            to={`/${personas[selectedPersona].recommendedSlug}`}
+            onClick={() => onSelectArticle(personas[selectedPersona].recommendedSlug)}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#0A2619] text-white hover:bg-[#184E36] text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors cursor-pointer whitespace-nowrap shadow-sm"
           >
             <span>Read Recommended Guide</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </CleanLink>
         </div>
       ) : (
         <div className="text-center py-2 text-xs text-emerald-200/70">

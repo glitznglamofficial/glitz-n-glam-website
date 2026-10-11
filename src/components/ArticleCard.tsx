@@ -1,6 +1,7 @@
 import React from 'react';
 import { Article } from '../data/articles';
-import { Bookmark, Check, ArrowRight } from 'lucide-react';
+import { Bookmark, Check, ArrowUpRight } from 'lucide-react';
+import { CleanLink } from './CleanLink';
 
 interface ArticleCardProps {
   article: Article;
@@ -18,9 +19,10 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
   return (
     <article className="group flex flex-col bg-white border border-[#E3EBE6] rounded-xl overflow-hidden hover:border-[#0A2619] hover:shadow-lg transition-all duration-300">
       {/* Visual Asset Container (4:3 aspect ratio) */}
-      <div 
+      <CleanLink 
+        to={`/${article.slug}`}
         onClick={() => onReadArticle(article.id)}
-        className="relative aspect-4/3 overflow-hidden bg-[#EEF5F1] cursor-pointer"
+        className="relative aspect-4/3 overflow-hidden bg-[#EEF5F1] cursor-pointer block"
       >
         <img
           src={article.image}
@@ -28,13 +30,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           referrerPolicy="no-referrer"
           loading="lazy"
-          decoding="async"
-          width="640"
-          height="480"
         />
         {/* Subtle scrim for contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      </div>
+        
+        {/* Hover quick-read affordance */}
+        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <div className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center text-[#0A2619] shadow-md">
+            <ArrowUpRight className="w-4 h-4" />
+          </div>
+        </div>
+      </CleanLink>
 
       {/* Content Area */}
       <div className="p-6 flex-1 flex flex-col justify-between">
@@ -51,29 +57,23 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           </div>
 
           {/* Title */}
-          <h3 
+          <CleanLink
+            to={`/${article.slug}`}
             onClick={() => onReadArticle(article.id)}
-            className="font-editorial text-xl sm:text-2xl font-bold text-[#0A2619] leading-snug mb-3 cursor-pointer group-hover:text-[#184E36] transition-colors"
-            style={{ textWrap: 'balance' }}
+            className="block mb-3"
           >
-            {article.title}
-          </h3>
+            <h3 
+              className="font-editorial text-xl sm:text-2xl font-bold text-[#0A2619] leading-snug cursor-pointer group-hover:text-[#184E36] transition-colors"
+              style={{ textWrap: 'balance' }}
+            >
+              {article.title}
+            </h3>
+          </CleanLink>
 
           {/* Excerpt */}
           <p className="text-sm text-[#2D4539] leading-relaxed line-clamp-3 mb-4">
             {article.excerpt}
           </p>
-
-          {/* Explicit Anchor Link for SEO & Accessibility */}
-          <div className="mb-4">
-            <button
-              onClick={() => onReadArticle(article.id)}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0A2619] group-hover:text-[#184E36] hover:underline cursor-pointer"
-            >
-              <span>Read Full Guide: {article.title.split(':')[0]}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
         </div>
 
         {/* Footer info: Author & Bookmark Button */}

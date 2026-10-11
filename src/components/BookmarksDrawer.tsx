@@ -1,13 +1,14 @@
 import React from 'react';
 import { Article } from '../data/articles';
 import { X, Bookmark, Trash2, ArrowRight } from 'lucide-react';
+import { CleanLink } from './CleanLink';
 
 interface BookmarksDrawerProps {
   isOpen: boolean;
   onClose: () => void;
   savedArticleIds: string[];
   articles: Article[];
-  onSelectArticle: (articleId: string) => void;
+  onSelectArticle: (articleIdOrSlug: string) => void;
   onRemoveBookmark: (articleId: string) => void;
   onClearAll: () => void;
 }
@@ -62,12 +63,13 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
           ) : (
             bookmarkedArticles.map((art) => (
               <div key={art.id} className="py-4 flex items-start justify-between gap-3 group">
-                <div 
+                <CleanLink 
+                  to={`/${art.slug}`}
                   onClick={() => {
-                    onSelectArticle(art.id);
+                    onSelectArticle(art.slug);
                     onClose();
                   }}
-                  className="flex-1 cursor-pointer"
+                  className="flex-1 cursor-pointer block text-inherit"
                 >
                   <span className="text-[11px] uppercase tracking-wider text-[#164D34] font-semibold block mb-0.5">
                     {art.category} · {art.readTime}
@@ -78,7 +80,7 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                   <span className="inline-flex items-center gap-1 text-xs text-[#446252] mt-2 group-hover:text-[#0A2619]">
                     Read guide <ArrowRight className="w-3 h-3" />
                   </span>
-                </div>
+                </CleanLink>
 
                 <button
                   onClick={() => onRemoveBookmark(art.id)}

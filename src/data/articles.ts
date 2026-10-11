@@ -59,7 +59,7 @@ export interface Article {
 export const ARTICLES: Article[] = [
   {
     "id": "1",
-    "slug": "science-of-anti-tarnish-pvd-coating",
+    "slug": "science-pvd-coating",
     "title": "The Science of Anti-Tarnish: What Is PVD Coating and Why Doesn't It Fade?",
     "subtitle": "Understanding the vacuum deposition breakthrough that keeps 18K gold brilliant for years.",
     "category": "Science & Innovation",
@@ -158,7 +158,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "2",
-    "slug": "gold-plated-vs-stainless-steel-comparison",
+    "slug": "gold-plated-vs-stainless-steel",
     "title": "18K Gold Plated vs 316L Stainless Steel: Which Jewellery Lasts Longer?",
     "subtitle": "A metallurgical breakdown of base metals, wear resistance, and long-term cost per wear.",
     "category": "Materials & Metals",
@@ -252,7 +252,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "3",
-    "slug": "sweat-proof-water-resistant-gym-jewellery",
+    "slug": "waterproof-gym-jewellery",
     "title": "Sweat-Proof & Ocean-Ready: The Ultimate Guide to Waterproof Gym Jewellery",
     "subtitle": "From intense morning Pilates to afternoon surf sessions, here are the pieces that never quit.",
     "category": "Everyday Staples",
@@ -346,7 +346,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "4",
-    "slug": "perfume-lotion-moisture-damaging-jewellery",
+    "slug": "perfume-moisture-jewellery-care",
     "title": "Perfume, Lotion, and Moisture: The Chemistry of What Destroys Jewellery",
     "subtitle": "Why your signature scent and daily skincare might be silently degrading your favourite accessories.",
     "category": "Jewellery Care",
@@ -440,7 +440,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "5",
-    "slug": "hypoallergenic-jewellery-sensitive-skin",
+    "slug": "hypoallergenic-jewellery-guide",
     "title": "Hypoallergenic Jewellery Explained: Why Sensitive Ears React and How to Fix It",
     "subtitle": "Say goodbye to itchy lobes, redness, and swelling with biocompatible metals that respect delicate skin.",
     "category": "Materials & Metals",
@@ -534,7 +534,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "6",
-    "slug": "mastering-necklace-layering-without-tangling",
+    "slug": "necklace-layering-guide",
     "title": "Mastering the Art of Necklace Layering: Lengths, Textures, and Anti-Tangle Secrets",
     "subtitle": "The foolproof stylist formula for building a cohesive, multi-chain stack that moves effortlessly with your body.",
     "category": "Style & Layering",
@@ -628,7 +628,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "7",
-    "slug": "art-of-ring-stacking-proportions-comfort",
+    "slug": "ring-stacking-guide",
     "title": "The Architecture of Ring Stacking: Balancing Proportions, Textures, and Comfort",
     "subtitle": "How to build intentional, sculptural ring stacks that look effortlessly chic and feel completely weightless.",
     "category": "Style & Layering",
@@ -722,7 +722,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "8",
-    "slug": "sustainable-anti-tarnish-jewellery-green-fashion",
+    "slug": "sustainable-jewellery-fashion",
     "title": "Sustainable Sparkle: Why Anti-Tarnish Jewellery Is the Green Future of Fashion",
     "subtitle": "Breaking the toxic cycle of fast-fashion jewellery waste with circular stainless steel and clean PVD technology.",
     "category": "Materials & Metals",
@@ -816,7 +816,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "9",
-    "slug": "how-to-clean-and-store-anti-tarnish-jewellery",
+    "slug": "jewellery-care-and-storage",
     "title": "The Complete Care & Storage Guide for Water-Resistant Everyday Jewellery",
     "subtitle": "Keep your gold glowing like day one with zero hassle, no harsh chemicals, and simple pro habits.",
     "category": "Jewellery Care",
@@ -910,7 +910,7 @@ export const ARTICLES: Article[] = [
   },
   {
     "id": "10",
-    "slug": "boardroom-to-beach-club-versatile-styling",
+    "slug": "waterproof-jewellery-styling",
     "title": "From Boardroom to Beach Club: 24-Hour Waterproof Jewellery Styling",
     "subtitle": "Build a seamless high-low jewellery capsule that transitions from executive meetings to sunset cocktails.",
     "category": "Everyday Staples",

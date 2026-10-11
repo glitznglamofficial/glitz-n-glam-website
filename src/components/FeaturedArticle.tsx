@@ -1,6 +1,7 @@
 import React from 'react';
 import { Article } from '../data/articles';
 import { ArrowRight, Bookmark, Check } from 'lucide-react';
+import { CleanLink } from './CleanLink';
 
 interface FeaturedArticleProps {
   article: Article;
@@ -33,19 +34,16 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Visual Column */}
           <div className="lg:col-span-7 relative group">
-            <div 
+            <CleanLink 
+              to={`/${article.slug}`}
               onClick={() => onReadArticle(article.id)}
-              className="relative aspect-16/10 rounded-xl overflow-hidden cursor-pointer shadow-xl border border-emerald-800/60 bg-[#071D13]"
+              className="relative aspect-16/10 rounded-xl overflow-hidden cursor-pointer shadow-xl border border-emerald-800/60 bg-[#071D13] block"
             >
               <img
                 src={article.image}
                 alt={article.imageAlt}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 referrerPolicy="no-referrer"
-                loading="eager"
-                decoding="async"
-                width="800"
-                height="500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               
@@ -60,7 +58,7 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
                   </div>
                 </div>
               )}
-            </div>
+            </CleanLink>
           </div>
 
           {/* Editorial Content Column */}
@@ -76,13 +74,18 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
               <span>{article.publishDate}</span>
             </div>
 
-            <h2 
+            <CleanLink
+              to={`/${article.slug}`}
               onClick={() => onReadArticle(article.id)}
-              className="font-editorial text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-[1.15] mb-4 cursor-pointer hover:text-[#E6C687] transition-colors"
-              style={{ textWrap: 'balance' }}
+              className="block mb-4"
             >
-              {article.title}
-            </h2>
+              <h2 
+                className="font-editorial text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-[1.15] cursor-pointer hover:text-[#E6C687] transition-colors"
+                style={{ textWrap: 'balance' }}
+              >
+                {article.title}
+              </h2>
+            </CleanLink>
 
             <p className="text-base text-emerald-100/90 leading-relaxed mb-6">
               {article.excerpt}
@@ -103,15 +106,16 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
               </div>
             </div>
 
-            {/* Action Buttons with clear anchor text */}
+            {/* Action Buttons */}
             <div className="flex items-center gap-4">
-              <button
+              <CleanLink
+                to={`/${article.slug}`}
                 onClick={() => onReadArticle(article.id)}
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#0A2619] hover:bg-[#EAEFEA] text-sm font-semibold tracking-wide uppercase rounded-lg transition-all shadow-sm cursor-pointer whitespace-nowrap"
               >
-                <span>Read Flagship Investigation: PVD Science</span>
+                <span>Read Full Article</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </CleanLink>
 
               <button
                 onClick={() => onToggleBookmark(article.id)}

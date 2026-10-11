@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { 
   ARTICLES, 
   CATEGORIES, 
-  CategoryType, 
-  Article 
+  CategoryType 
 } from './data/articles';
 import { Navbar } from './components/Navbar';
 import { FeaturedArticle } from './components/FeaturedArticle';
@@ -14,8 +13,14 @@ import { BookmarksDrawer } from './components/BookmarksDrawer';
 import { AboutModal } from './components/AboutModal';
 import { JewelleryQuiz } from './components/JewelleryQuiz';
 import { Footer } from './components/Footer';
+import { CleanLink } from './components/CleanLink';
 import { 
-  Filter, 
+  parseCurrentRoute, 
+  pushRoute, 
+  CATEGORY_SLUG_MAP, 
+  updatePageSEO 
+} from './utils/router';
+import { 
   ArrowUpDown, 
   Sparkles, 
   Droplets, 
@@ -54,40 +59,159 @@ export default function App() {
     }
   }, [savedArticleIds]);
 
-  // Handle URL hash routing for direct links & back button
+  // Sync route on mount and when browser back/forward buttons are pressed
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      if (hash.startsWith('#/article/')) {
-        const idOrSlug = hash.replace('#/article/', '');
-        const target = ARTICLES.find((a) => a.id === idOrSlug || a.slug === idOrSlug);
+    const syncRoute = () => {
+      const route = parseCurrentRoute();
+
+      if (route.page === 'article' && route.articleSlug) {
+        const target = ARTICLES.find((a) => a.slug === route.articleSlug);
         if (target) {
           setActiveArticleId(target.id);
+          setIsAboutOpen(false);
+          setIsBookmarksOpen(false);
+          setIsSearchOpen(false);
+          updatePageSEO(
+            `${target.title} | Glitz n Glam`,
+            target.excerpt,
+            `/${target.slug}`
+          );
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
         }
+      }
+
+      // If not viewing an article
+      setActiveArticleId(null);
+
+      if (route.page === 'category' && route.category) {
+        setSelectedCategory(route.category);
+        setIsAboutOpen(false);
+        setIsBookmarksOpen(false);
+        setIsSearchOpen(false);
+        updatePageSEO(
+          `${route.category} Articles | Glitz n Glam Journal`,
+          `Curated anti-tarnish jewellery guides on ${route.category} by Glitz n Glam.`,
+          `/${CATEGORY_SLUG_MAP[route.category]}`
+        );
+        const el = document.getElementById('articles-section');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (route.page === 'philosophy') {
+        setIsAboutOpen(true);
+        setIsBookmarksOpen(false);
+        setIsSearchOpen(false);
+        updatePageSEO(
+          'Our Philosophy & Material Standards | Glitz n Glam',
+          'Learn about our standard of 18K gold fused onto medical-grade 316L surgical steel.',
+          '/our-philosophy'
+        );
+      } else if (route.page === 'saved') {
+        setIsBookmarksOpen(true);
+        setIsAboutOpen(false);
+        setIsSearchOpen(false);
+        updatePageSEO(
+          'Saved Reading List | Glitz n Glam Journal',
+          'Your saved anti-tarnish jewellery guides and style routines.',
+          '/saved-articles'
+        );
+      } else if (route.page === 'quiz') {
+        setIsAboutOpen(false);
+        setIsBookmarksOpen(false);
+        setIsSearchOpen(false);
+        updatePageSEO(
+          'Jewellery Formula Matcher | Glitz n Glam',
+          'Find your ideal anti-tarnish jewellery formula for workouts, sensitive skin, and daily wear.',
+          '/jewellery-quiz'
+        );
+        const quizEl = document.getElementById('jewellery-quiz-section');
+        if (quizEl) {
+          quizEl.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else if (route.page === 'search') {
+        setIsSearchOpen(true);
+        setIsAboutOpen(false);
+        setIsBookmarksOpen(false);
+        updatePageSEO(
+          'Search Articles Archive | Glitz n Glam',
+          'Search through all 10 in-depth anti-tarnish jewellery investigations.',
+          '/search'
+        );
       } else {
-        setActiveArticleId(null);
+        // Home
+        setIsAboutOpen(false);
+        setIsBookmarksOpen(false);
+        setIsSearchOpen(false);
+        updatePageSEO(
+          'Glitz n Glam | Anti-Tarnish Jewellery Journal',
+          'Editorial blog and style guides by Glitz n Glam, exploring waterproof, sweat-resistant, and hypoallergenic 18K gold anti-tarnish jewellery.',
+          '/'
+        );
       }
     };
 
-    handleHashChange();
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    syncRoute();
+    window.addEventListener('popstate', syncRoute);
+    return () => window.removeEventListener('popstate', syncRoute);
   }, []);
 
-  const navigateToArticle = (articleId: string) => {
-    const article = ARTICLES.find((a) => a.id === articleId);
+  const navigateToArticle = (idOrSlug: string) => {
+    const article = ARTICLES.find((a) => a.id === idOrSlug || a.slug === idOrSlug);
     if (article) {
-      window.location.hash = `#/article/${article.slug}`;
+      pushRoute(`/${article.slug}`);
       setActiveArticleId(article.id);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
   const navigateHome = () => {
-    window.location.hash = '';
+    pushRoute('/');
     setActiveArticleId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectCategory = (cat: CategoryType) => {
+    setSelectedCategory(cat);
+    setActiveArticleId(null);
+    if (cat === 'All Articles') {
+      pushRoute('/all-articles');
+    } else {
+      pushRoute(`/${CATEGORY_SLUG_MAP[cat]}`);
+    }
+  };
+
+  const openAbout = () => {
+    pushRoute('/our-philosophy');
+  };
+
+  const closeAbout = () => {
+    setIsAboutOpen(false);
+    if (window.location.pathname === '/our-philosophy') {
+      pushRoute(activeArticle ? `/${activeArticle.slug}` : '/');
+    }
+  };
+
+  const openBookmarks = () => {
+    pushRoute('/saved-articles');
+  };
+
+  const closeBookmarks = () => {
+    setIsBookmarksOpen(false);
+    if (window.location.pathname === '/saved-articles') {
+      pushRoute(activeArticle ? `/${activeArticle.slug}` : '/');
+    }
+  };
+
+  const openSearch = () => {
+    pushRoute('/search');
+  };
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
+    if (window.location.pathname === '/search') {
+      pushRoute(activeArticle ? `/${activeArticle.slug}` : '/');
+    }
   };
 
   const toggleBookmark = (articleId: string) => {
@@ -135,24 +259,22 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white text-[#14281f]">
-      {/* Top Navigation Bar */}
+      {/* Top Navigation Bar with Clean Links */}
       <Navbar
-        onSearchClick={() => setIsSearchOpen(true)}
-        onBookmarksClick={() => setIsBookmarksOpen(true)}
-        onAboutClick={() => setIsAboutOpen(true)}
+        onSearchClick={openSearch}
+        onBookmarksClick={openBookmarks}
+        onAboutClick={openAbout}
         savedCount={savedArticleIds.length}
-        onSelectCategory={(cat) => {
-          setSelectedCategory(cat);
-          navigateHome();
-        }}
+        onSelectCategory={handleSelectCategory}
         onNavigateHome={navigateHome}
         currentArticleId={activeArticleId}
+        activeCategory={selectedCategory}
       />
 
       {/* Main Content Area */}
       <main className="flex-1">
         {activeArticle ? (
-          /* Separate Dedicated Article View */
+          /* Separate Dedicated Article View with Clean URL */
           <ArticleView
             article={activeArticle}
             allArticles={ARTICLES}
@@ -219,10 +341,12 @@ export default function App() {
             />
 
             {/* Interactive Jewellery Formula Matcher */}
-            <JewelleryQuiz onSelectArticle={navigateToArticle} />
+            <div id="jewellery-quiz-section">
+              <JewelleryQuiz onSelectArticle={navigateToArticle} />
+            </div>
 
             {/* All Articles Section */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <section id="articles-section" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
               {/* Section Header */}
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-6 border-b border-[#E3EBE6] gap-4">
                 <div>
@@ -239,7 +363,7 @@ export default function App() {
                   <span>Showing <strong className="text-[#0A2619] font-semibold">{filteredArticles.length}</strong> of 10 articles</span>
                   {selectedCategory !== 'All Articles' && (
                     <button
-                      onClick={() => setSelectedCategory('All Articles')}
+                      onClick={() => handleSelectCategory('All Articles')}
                       className="text-[#0A2619] font-semibold underline cursor-pointer hover:text-[#184E36]"
                     >
                       Reset filter
@@ -248,22 +372,24 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Interactive Category Segmented Tabs */}
+              {/* Interactive Category Segmented Tabs with Clean Links */}
               <div className="flex items-center gap-1.5 overflow-x-auto pb-3 mb-8 no-scrollbar">
                 {CATEGORIES.map((cat) => {
                   const isActive = selectedCategory === cat;
+                  const catUrl = cat === 'All Articles' ? '/all-articles' : `/${CATEGORY_SLUG_MAP[cat]}`;
                   return (
-                    <button
+                    <CleanLink
                       key={cat}
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer ${
+                      to={catUrl}
+                      onClick={() => handleSelectCategory(cat)}
+                      className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer block ${
                         isActive
                           ? 'bg-[#0A2619] text-white shadow-xs'
                           : 'bg-[#F1F6F3] text-[#2D4539] hover:bg-[#E3EDE7] hover:text-[#0A2619]'
                       }`}
                     >
                       {cat}
-                    </button>
+                    </CleanLink>
                   );
                 })}
               </div>
@@ -317,7 +443,7 @@ export default function App() {
                   </p>
                   <button
                     onClick={() => {
-                      setSelectedCategory('All Articles');
+                      handleSelectCategory('All Articles');
                       setSearchQuery('');
                     }}
                     className="px-5 py-2.5 bg-[#0A2619] text-white text-xs font-semibold uppercase tracking-wider rounded-lg cursor-pointer hover:bg-[#184E36]"
@@ -343,27 +469,24 @@ export default function App() {
         )}
       </main>
 
-      {/* Luxury Editorial Footer */}
+      {/* Luxury Editorial Footer with Clean Links */}
       <Footer
-        onSelectCategory={(cat) => {
-          setSelectedCategory(cat);
-          navigateHome();
-        }}
-        onAboutClick={() => setIsAboutOpen(true)}
+        onSelectCategory={handleSelectCategory}
+        onAboutClick={openAbout}
         onNavigateHome={navigateHome}
       />
 
       {/* Global Overlays & Modals */}
       <SearchModal
         isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
+        onClose={closeSearch}
         articles={ARTICLES}
         onSelectArticle={navigateToArticle}
       />
 
       <BookmarksDrawer
         isOpen={isBookmarksOpen}
-        onClose={() => setIsBookmarksOpen(false)}
+        onClose={closeBookmarks}
         savedArticleIds={savedArticleIds}
         articles={ARTICLES}
         onSelectArticle={navigateToArticle}
@@ -373,7 +496,7 @@ export default function App() {
 
       <AboutModal
         isOpen={isAboutOpen}
-        onClose={() => setIsAboutOpen(false)}
+        onClose={closeAbout}
       />
     </div>
   );

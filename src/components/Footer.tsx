@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check, Droplets, ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { Check, Droplets, ShieldCheck, Heart, Sparkles } from 'lucide-react';
 import { CategoryType } from '../data/articles';
+import { CleanLink } from './CleanLink';
 
 interface FooterProps {
   onSelectCategory: (category: CategoryType) => void;
@@ -67,9 +68,10 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Column 1: Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <button
+            <CleanLink
+              to="/"
               onClick={onNavigateHome}
-              className="text-left cursor-pointer group"
+              className="text-left cursor-pointer group block"
             >
               <span className="font-editorial text-3xl font-bold tracking-tight text-white uppercase group-hover:text-[#E6C687] transition-colors">
                 Glitz n Glam
@@ -77,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({
               <span className="block text-[11px] tracking-[0.25em] text-emerald-300/70 uppercase font-sans font-medium mt-0.5">
                 The Anti-Tarnish Journal
               </span>
-            </button>
+            </CleanLink>
             <p className="text-sm text-emerald-100/80 leading-relaxed max-w-sm">
               Dedicated to liberating modern jewellery from the fear of tarnishing. Real 18K gold fused onto biocompatible 316L surgical steel for eternal brilliance.
             </p>
@@ -93,44 +95,49 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <ul className="space-y-2 text-sm text-emerald-100/80">
               <li>
-                <button
+                <CleanLink
+                  to="/science-and-innovation"
                   onClick={() => onSelectCategory('Science & Innovation')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Science & PVD Innovation
-                </button>
+                </CleanLink>
               </li>
               <li>
-                <button
+                <CleanLink
+                  to="/materials-and-metals"
                   onClick={() => onSelectCategory('Materials & Metals')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   316L Steel vs Brass
-                </button>
+                </CleanLink>
               </li>
               <li>
-                <button
+                <CleanLink
+                  to="/style-and-layering"
                   onClick={() => onSelectCategory('Style & Layering')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Necklace & Ring Styling
-                </button>
+                </CleanLink>
               </li>
               <li>
-                <button
+                <CleanLink
+                  to="/everyday-staples"
                   onClick={() => onSelectCategory('Everyday Staples')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   The Everyday Capsule
-                </button>
+                </CleanLink>
               </li>
               <li>
-                <button
+                <CleanLink
+                  to="/jewellery-care"
                   onClick={() => onSelectCategory('Jewellery Care')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Cleaning & Care Hacks
-                </button>
+                </CleanLink>
               </li>
             </ul>
           </div>
@@ -175,15 +182,27 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="mt-12 pt-8 border-t border-[#143B27] flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-300/60 gap-4">
           <p>© 2026 Glitz n Glam Ltd. All rights reserved. Registered trademark.</p>
           <div className="flex items-center gap-6">
-            <button onClick={onAboutClick} className="hover:text-white transition-colors cursor-pointer">
+            <CleanLink
+              to="/our-philosophy"
+              onClick={onAboutClick}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
               Our Material Standards
-            </button>
-            <button onClick={onAboutClick} className="hover:text-white transition-colors cursor-pointer">
+            </CleanLink>
+            <CleanLink
+              to="/our-philosophy"
+              onClick={onAboutClick}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
               Ethics & Circularity
-            </button>
-            <button onClick={onNavigateHome} className="hover:text-white transition-colors cursor-pointer">
+            </CleanLink>
+            <CleanLink
+              to="/"
+              onClick={onNavigateHome}
+              className="hover:text-white transition-colors cursor-pointer"
+            >
               Journal Home
-            </button>
+            </CleanLink>
           </div>
         </div>
       </div>

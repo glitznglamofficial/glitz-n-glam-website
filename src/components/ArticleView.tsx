@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Article } from '../data/articles';
+import { CleanLink } from './CleanLink';
+import { CATEGORY_SLUG_MAP } from '../utils/router';
 import { 
   ArrowLeft, 
   Bookmark, 
@@ -83,7 +85,8 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
   const handleShare = () => {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
+      const cleanUrl = `${window.location.origin}/${article.slug}`;
+      navigator.clipboard.writeText(cleanUrl);
       setCopiedShare(true);
       setTimeout(() => setCopiedShare(false), 2500);
     }
@@ -583,10 +586,11 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedArticles.map((rel) => (
-              <div
+              <CleanLink
                 key={rel.id}
+                to={`/${rel.slug}`}
                 onClick={() => onSelectArticle(rel.id)}
-                className="group cursor-pointer flex flex-col bg-white border border-[#E3EBE6] rounded-xl overflow-hidden hover:border-[#0A2619] hover:shadow-md transition-all"
+                className="group cursor-pointer flex flex-col bg-white border border-[#E3EBE6] rounded-xl overflow-hidden hover:border-[#0A2619] hover:shadow-md transition-all text-inherit"
               >
                 <div className="aspect-4/3 overflow-hidden bg-stone-100">
                   <img
@@ -609,7 +613,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                     {rel.readTime}
                   </div>
                 </div>
-              </div>
+              </CleanLink>
             ))}
           </div>
         </section>
