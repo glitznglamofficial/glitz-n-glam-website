@@ -1,6 +1,6 @@
 import React from 'react';
 import { Article } from '../data/articles';
-import { Bookmark, Check, ArrowUpRight } from 'lucide-react';
+import { Bookmark, Check, ArrowRight } from 'lucide-react';
 
 interface ArticleCardProps {
   article: Article;
@@ -28,16 +28,12 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
           referrerPolicy="no-referrer"
           loading="lazy"
+          decoding="async"
+          width="640"
+          height="480"
         />
         {/* Subtle scrim for contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        
-        {/* Hover quick-read affordance */}
-        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          <div className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center text-[#0A2619] shadow-md">
-            <ArrowUpRight className="w-4 h-4" />
-          </div>
-        </div>
       </div>
 
       {/* Content Area */}
@@ -67,6 +63,17 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           <p className="text-sm text-[#2D4539] leading-relaxed line-clamp-3 mb-4">
             {article.excerpt}
           </p>
+
+          {/* Explicit Anchor Link for SEO & Accessibility */}
+          <div className="mb-4">
+            <button
+              onClick={() => onReadArticle(article.id)}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0A2619] group-hover:text-[#184E36] hover:underline cursor-pointer"
+            >
+              <span>Read Full Guide: {article.title.split(':')[0]}</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
 
         {/* Footer info: Author & Bookmark Button */}

@@ -42,6 +42,10 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
                 alt={article.imageAlt}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 referrerPolicy="no-referrer"
+                loading="eager"
+                decoding="async"
+                width="800"
+                height="500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               
@@ -99,13 +103,13 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {/* Action Buttons with clear anchor text */}
             <div className="flex items-center gap-4">
               <button
                 onClick={() => onReadArticle(article.id)}
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#0A2619] hover:bg-[#EAEFEA] text-sm font-semibold tracking-wide uppercase rounded-lg transition-all shadow-sm cursor-pointer whitespace-nowrap"
               >
-                <span>Read Full Article</span>
+                <span>Read Flagship Investigation: PVD Science</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 

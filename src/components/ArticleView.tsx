@@ -11,7 +11,8 @@ import {
   ThumbsUp, 
   MessageSquare, 
   Send,
-  Type
+  Type,
+  HelpCircle
 } from 'lucide-react';
 
 interface ArticleViewProps {
@@ -279,6 +280,13 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                 </a>
               </li>
             ))}
+            {article.faqs && article.faqs.length > 0 && (
+              <li>
+                <a href="#faqs" className="hover:text-[#0A2619] transition-colors font-medium text-[#164D34]">
+                  Frequently Asked Questions ({article.faqs.length})
+                </a>
+              </li>
+            )}
             <li>
               <a href="#conclusion" className="hover:text-[#0A2619] transition-colors font-medium">
                 Final Verdict & Longevity Advice
@@ -339,6 +347,42 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
               )}
             </section>
           ))}
+
+          {/* Frequently Asked Questions */}
+          {article.faqs && article.faqs.length > 0 && (
+            <div id="faqs" className="mt-14 mb-12 pt-8 border-t border-[#E3EBE6]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-9 h-9 rounded-lg bg-[#E5F0E9] text-[#0A2619] flex items-center justify-center">
+                  <HelpCircle className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#164D34] block">
+                    Reader Knowledge Base
+                  </span>
+                  <h3 className="font-editorial text-2xl sm:text-3xl font-bold text-[#0A2619]">
+                    Frequently Asked Questions
+                  </h3>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {article.faqs.map((faq, fIdx) => (
+                  <div 
+                    key={fIdx}
+                    className="p-5 sm:p-6 bg-[#F8FAF9] border border-[#E3EBE6] rounded-xl hover:border-[#164D34]/40 transition-colors"
+                  >
+                    <h4 className="font-editorial text-lg sm:text-xl font-bold text-[#0A2619] mb-2 flex items-start gap-2">
+                      <span className="text-[#164D34] font-mono text-sm mt-0.5 font-bold">Q{fIdx + 1}.</span>
+                      <span>{faq.question}</span>
+                    </h4>
+                    <p className="text-sm sm:text-base text-[#254234] leading-relaxed pl-6">
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Conclusion */}
           <div id="conclusion" className="mt-12 p-8 bg-[#0A2619] text-white border border-[#16432E] rounded-2xl shadow-lg">
