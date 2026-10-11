@@ -127,9 +127,11 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
   // Calculate total paragraphs
   const totalParagraphs = 
-    (typeof article.introduction === 'string' ? article.introduction.split('\n\n').length : 0) +
-    article.sections.reduce((acc, sec) => acc + sec.paragraphs.length, 0) +
-    (typeof article.conclusion === 'string' ? article.conclusion.split('\n\n').length : 0);
+    article.paragraphs?.length ?? (
+      (typeof article.introduction === 'string' ? article.introduction.split('\n\n').filter(Boolean).length : 0) +
+      article.sections.reduce((acc, sec) => acc + sec.paragraphs.length, 0) +
+      (typeof article.conclusion === 'string' ? article.conclusion.split('\n\n').filter(Boolean).length : 0)
+    );
 
   return (
     <div className="min-h-screen bg-white pb-24 text-[#14281f]">
@@ -219,7 +221,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           <span aria-hidden="true">·</span>
           <span className="inline-flex items-center gap-1 text-[#0A2619] font-medium bg-[#E8F2EC] px-2 py-0.5 rounded">
             <FileText className="w-3.5 h-3.5 text-[#164D34]" />
-            {totalParagraphs} Paragraphs (Long Read)
+            {totalParagraphs} Paragraphs (In-Depth Editorial)
           </span>
         </div>
 
