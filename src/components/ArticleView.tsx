@@ -12,7 +12,8 @@ import {
   MessageSquare, 
   Send,
   Type,
-  HelpCircle
+  HelpCircle,
+  FileText
 } from 'lucide-react';
 
 interface ArticleViewProps {
@@ -124,6 +125,12 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
   const prevArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
   const nextArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
 
+  // Calculate total paragraphs
+  const totalParagraphs = 
+    (typeof article.introduction === 'string' ? article.introduction.split('\n\n').length : 0) +
+    article.sections.reduce((acc, sec) => acc + sec.paragraphs.length, 0) +
+    (typeof article.conclusion === 'string' ? article.conclusion.split('\n\n').length : 0);
+
   return (
     <div className="min-h-screen bg-white pb-24 text-[#14281f]">
       {/* Sticky Reading Progress Bar */}
@@ -208,6 +215,11 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           <span className="inline-flex items-center gap-1">
             <Calendar className="w-3.5 h-3.5" />
             {article.publishDate}
+          </span>
+          <span aria-hidden="true">·</span>
+          <span className="inline-flex items-center gap-1 text-[#0A2619] font-medium bg-[#E8F2EC] px-2 py-0.5 rounded">
+            <FileText className="w-3.5 h-3.5 text-[#164D34]" />
+            {totalParagraphs} Paragraphs (Long Read)
           </span>
         </div>
 
@@ -298,10 +310,18 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
         {/* Article Body Content */}
         <div className={`prose max-w-none text-[#1A3326] ${largeFont ? 'text-lg sm:text-xl leading-[1.8]' : 'text-base sm:text-lg leading-[1.75]'}`}>
           {/* Introduction with drop cap */}
-          <div id="introduction" className="mb-10 text-justify">
-            <p className="first-letter:text-5xl first-letter:font-bold first-letter:font-editorial first-letter:float-left first-letter:mr-3 first-letter:text-[#0A2619] first-letter:leading-none">
-              {article.introduction}
-            </p>
+          <div id="introduction" className="mb-10 text-justify space-y-4">
+            {typeof article.introduction === 'string' 
+              ? article.introduction.split('\n\n').map((para, pIdx) => (
+                  <p 
+                    key={pIdx} 
+                    className={pIdx === 0 ? "first-letter:text-5xl first-letter:font-bold first-letter:font-editorial first-letter:float-left first-letter:mr-3 first-letter:text-[#0A2619] first-letter:leading-none text-[#254234]" : "text-[#254234]"}
+                  >
+                    {para}
+                  </p>
+                ))
+              : null
+            }
           </div>
 
           {/* Sections */}
@@ -389,9 +409,13 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             <h3 className="font-editorial text-2xl font-bold text-white mb-3">
               The Glitz n Glam Conclusion
             </h3>
-            <p className="text-emerald-100/90 leading-relaxed">
-              {article.conclusion}
-            </p>
+            <div className="space-y-3">
+              {article.conclusion.split('\n\n').map((cPara, cIdx) => (
+                <p key={cIdx} className="text-emerald-100/90 leading-relaxed">
+                  {cPara}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
 
