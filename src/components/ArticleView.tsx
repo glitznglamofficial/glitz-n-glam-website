@@ -305,12 +305,19 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
 
         {/* Lead Hero Image */}
         <div className="relative aspect-16/10 rounded-2xl overflow-hidden mb-12 shadow-sm border border-[#E3EBE6] bg-[#EEF5F1]">
-          <img
-            src={article.image}
-            alt={article.imageAlt}
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+          <picture>
+            <source srcSet={article.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
+            <img
+              src={article.image}
+              alt={article.imageAlt}
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+              loading="eager"
+              decoding="async"
+              width={1200}
+              height={750}
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
           <div className="absolute bottom-3 left-4 right-4 text-xs text-white/90">
             {article.imageAlt} — Photographed for Glitz n Glam Journal.
@@ -634,12 +641,19 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                 className="group cursor-pointer flex flex-col bg-white border border-[#E3EBE6] rounded-xl overflow-hidden hover:border-[#0A2619] hover:shadow-md transition-all text-inherit"
               >
                 <div className="aspect-4/3 overflow-hidden bg-stone-100">
-                  <img
-                    src={rel.image}
-                    alt={rel.imageAlt}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    referrerPolicy="no-referrer"
-                  />
+                  <picture>
+                    <source srcSet={rel.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
+                    <img
+                      src={rel.image}
+                      alt={rel.imageAlt}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                      loading="lazy"
+                      decoding="async"
+                      width={400}
+                      height={300}
+                    />
+                  </picture>
                 </div>
                 <div className="p-4 flex-1 flex flex-col justify-between">
                   <div>

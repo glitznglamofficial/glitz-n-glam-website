@@ -110,12 +110,19 @@ export const SearchModal: React.FC<SearchModalProps> = ({
               >
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-md bg-[#EEF5F1] shrink-0 overflow-hidden mt-0.5">
-                    <img
-                      src={art.image}
-                      alt=""
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
+                    <picture>
+                      <source srcSet={art.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
+                      <img
+                        src={art.image}
+                        alt=""
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                        loading="lazy"
+                        decoding="async"
+                        width={40}
+                        height={40}
+                      />
+                    </picture>
                   </div>
                   <div>
                     <div className="flex items-center gap-2 text-[11px] text-[#446252]">

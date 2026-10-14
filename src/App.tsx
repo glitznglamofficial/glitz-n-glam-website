@@ -92,7 +92,7 @@ export default function App() {
         if (route.category === 'All Articles') {
           updatePageSEO(
             'Anti Tarnish Jewellery Articles – Tips & Style Guides',
-            'Explore our anti tarnish jewellery articles for expert styling guides, care tips, and buying advice to keep your waterproof pieces shining bright every day.',
+            'Explore anti tarnish jewellery tips, styling ideas, care guides and jewellery trends from Glitz N Glam. Discover inspiration and find your next favourite piece!',
             `/${CATEGORY_SLUG_MAP[route.category]}`
           );
         } else {
@@ -153,7 +153,7 @@ export default function App() {
         setIsSearchOpen(false);
         updatePageSEO(
           'Anti Tarnish Jewellery Articles – Tips & Style Guides',
-          'Explore our anti tarnish jewellery articles for expert styling guides, care tips, and buying advice to keep your waterproof pieces shining bright every day.',
+          'Explore anti tarnish jewellery tips, styling ideas, care guides and jewellery trends from Glitz N Glam. Discover inspiration and find your next favourite piece!',
           '/'
         );
       }

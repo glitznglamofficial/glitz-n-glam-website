@@ -19,12 +19,12 @@ export interface PageSeoData {
 export const HOMEPAGE_SEO: PageSeoData = {
   title: 'Anti Tarnish Jewellery Articles – Tips & Style Guides',
   metaDescription:
-    'Explore our anti tarnish jewellery articles for expert styling guides, care tips, and buying advice to keep your waterproof pieces shining bright every day.',
+    'Explore anti tarnish jewellery tips, styling ideas, care guides and jewellery trends from Glitz N Glam. Discover inspiration and find your next favourite piece!',
   mainKeyword: 'anti tarnish jewellery',
   relatedKeywords: ['waterproof gold jewellery', 'hypoallergenic 18k jewellery'],
   canonicalPath: '/',
   type: 'website',
-  image: '/images/hero_jewellery_water_1791397599157.jpg',
+  image: '/images/hero_jewellery_water_1791397599157.webp',
   faqs: [
     {
       question: 'What is anti tarnish jewellery and how does it work?',
@@ -120,7 +120,7 @@ function updateSchemaJsonLd(seo: PageSeoData, canonicalUrl: string) {
       name: 'Glitz n Glam',
       logo: {
         '@type': 'ImageObject',
-        url: `${window.location.origin}/images/hero_jewellery_water_1791397599157.jpg`,
+        url: `${window.location.origin}/images/hero_jewellery_water_1791397599157.webp`,
       },
     },
   };
