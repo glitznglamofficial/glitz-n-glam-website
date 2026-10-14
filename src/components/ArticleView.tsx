@@ -190,6 +190,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
           <button
             onClick={onBack}
+            aria-label="Back to all anti tarnish jewellery articles"
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-[#2D4539] hover:text-[#0A2619] transition-colors cursor-pointer group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
@@ -533,6 +534,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           {prevArticle ? (
             <button
               onClick={() => onSelectArticle(prevArticle.id)}
+              aria-label={`Read previous article: ${prevArticle.title}`}
               className="text-left p-5 rounded-xl border border-[#E3EBE6] hover:border-[#0A2619] hover:bg-[#F8FAF9] transition-all cursor-pointer group"
             >
               <span className="text-[11px] uppercase tracking-wider text-[#446252] block mb-1">
@@ -547,6 +549,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
           {nextArticle ? (
             <button
               onClick={() => onSelectArticle(nextArticle.id)}
+              aria-label={`Read next article: ${nextArticle.title}`}
               className="text-right p-5 rounded-xl border border-[#E3EBE6] hover:border-[#0A2619] hover:bg-[#F8FAF9] transition-all cursor-pointer group"
             >
               <span className="text-[11px] uppercase tracking-wider text-[#446252] block mb-1">
@@ -639,6 +642,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                 to={`/${rel.slug}`}
                 onClick={() => onSelectArticle(rel.id)}
                 className="group cursor-pointer flex flex-col bg-white border border-[#E3EBE6] rounded-xl overflow-hidden hover:border-[#0A2619] hover:shadow-md transition-all text-inherit"
+                aria-label={`Read related guide: ${rel.title}`}
               >
                 <div className="aspect-4/3 overflow-hidden bg-stone-100">
                   <picture>

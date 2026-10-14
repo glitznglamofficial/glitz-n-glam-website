@@ -70,6 +70,7 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                     onClose();
                   }}
                   className="flex-1 cursor-pointer block text-inherit"
+                  aria-label={`Read saved guide: ${art.title}`}
                 >
                   <span className="text-[11px] uppercase tracking-wider text-[#164D34] font-semibold block mb-0.5">
                     {art.category} · {art.readTime}
@@ -78,7 +79,7 @@ export const BookmarksDrawer: React.FC<BookmarksDrawerProps> = ({
                     {art.title}
                   </h4>
                   <span className="inline-flex items-center gap-1 text-xs text-[#446252] mt-2 group-hover:text-[#0A2619]">
-                    Read guide <ArrowRight className="w-3 h-3" />
+                    Read article guide <ArrowRight className="w-3 h-3" />
                   </span>
                 </CleanLink>
 

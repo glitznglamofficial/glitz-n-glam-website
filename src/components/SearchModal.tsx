@@ -107,6 +107,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                   onClose();
                 }}
                 className="py-3.5 group cursor-pointer flex items-center justify-between gap-4 hover:bg-[#F1F6F3] px-3 rounded-lg transition-colors text-inherit"
+                aria-label={`Read article: ${art.title}`}
               >
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 rounded-md bg-[#EEF5F1] shrink-0 overflow-hidden mt-0.5">

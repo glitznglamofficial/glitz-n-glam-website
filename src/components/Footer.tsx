@@ -71,6 +71,7 @@ export const Footer: React.FC<FooterProps> = ({
             <CleanLink
               to="/"
               onClick={onNavigateHome}
+              aria-label="Glitz n Glam - Anti Tarnish Jewellery Home"
               className="text-left cursor-pointer group block"
             >
               <span className="font-editorial text-3xl font-bold tracking-tight text-white uppercase group-hover:text-[#E6C687] transition-colors">
@@ -98,6 +99,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <CleanLink
                   to="/science-and-innovation"
                   onClick={() => onSelectCategory('Science & Innovation')}
+                  aria-label="Read Science & PVD Innovation articles"
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Science & PVD Innovation
@@ -107,6 +109,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <CleanLink
                   to="/materials-and-metals"
                   onClick={() => onSelectCategory('Materials & Metals')}
+                  aria-label="Explore 316L Steel vs Brass comparison articles"
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   316L Steel vs Brass
@@ -116,6 +119,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <CleanLink
                   to="/style-and-layering"
                   onClick={() => onSelectCategory('Style & Layering')}
+                  aria-label="Browse Necklace & Ring Styling guides"
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Necklace & Ring Styling
@@ -125,6 +129,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <CleanLink
                   to="/everyday-staples"
                   onClick={() => onSelectCategory('Everyday Staples')}
+                  aria-label="Explore Everyday Capsule jewellery articles"
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   The Everyday Capsule
@@ -134,6 +139,7 @@ export const Footer: React.FC<FooterProps> = ({
                 <CleanLink
                   to="/jewellery-care"
                   onClick={() => onSelectCategory('Jewellery Care')}
+                  aria-label="Learn Jewellery Cleaning & Care Hacks"
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Cleaning & Care Hacks
@@ -185,6 +191,7 @@ export const Footer: React.FC<FooterProps> = ({
             <CleanLink
               to="/our-philosophy"
               onClick={onAboutClick}
+              aria-label="Read our material standards and certifications"
               className="hover:text-white transition-colors cursor-pointer"
             >
               Our Material Standards
@@ -192,6 +199,7 @@ export const Footer: React.FC<FooterProps> = ({
             <CleanLink
               to="/our-philosophy"
               onClick={onAboutClick}
+              aria-label="Read about our ethics and circularity commitments"
               className="hover:text-white transition-colors cursor-pointer"
             >
               Ethics & Circularity
@@ -199,6 +207,7 @@ export const Footer: React.FC<FooterProps> = ({
             <CleanLink
               to="/"
               onClick={onNavigateHome}
+              aria-label="Return to Glitz n Glam Journal homepage"
               className="hover:text-white transition-colors cursor-pointer"
             >
               Journal Home

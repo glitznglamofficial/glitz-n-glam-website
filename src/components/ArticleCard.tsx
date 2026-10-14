@@ -23,6 +23,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
         to={`/${article.slug}`}
         onClick={() => onReadArticle(article.id)}
         className="relative aspect-4/3 overflow-hidden bg-[#EEF5F1] cursor-pointer block"
+        aria-label={`Read guide: ${article.title}`}
       >
         <picture>
           <source srcSet={article.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
@@ -67,6 +68,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
             to={`/${article.slug}`}
             onClick={() => onReadArticle(article.id)}
             className="block mb-3"
+            aria-label={`Read article: ${article.title}`}
           >
             <h3 
               className="font-editorial text-xl sm:text-2xl font-bold text-[#0A2619] leading-snug cursor-pointer group-hover:text-[#184E36] transition-colors"

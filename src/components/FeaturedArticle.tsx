@@ -38,6 +38,7 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
               to={`/${article.slug}`}
               onClick={() => onReadArticle(article.id)}
               className="relative aspect-16/10 rounded-xl overflow-hidden cursor-pointer shadow-xl border border-emerald-800/60 bg-[#071D13] block"
+              aria-label={`Read featured guide: ${article.title}`}
             >
               <picture>
                 <source srcSet={article.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
@@ -85,6 +86,7 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
               to={`/${article.slug}`}
               onClick={() => onReadArticle(article.id)}
               className="block mb-4"
+              aria-label={`Read article: ${article.title}`}
             >
               <h2 
                 className="font-editorial text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-[1.15] cursor-pointer hover:text-[#E6C687] transition-colors"
@@ -119,8 +121,9 @@ export const FeaturedArticle: React.FC<FeaturedArticleProps> = ({
                 to={`/${article.slug}`}
                 onClick={() => onReadArticle(article.id)}
                 className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-[#0A2619] hover:bg-[#EAEFEA] text-sm font-semibold tracking-wide uppercase rounded-lg transition-all shadow-sm cursor-pointer whitespace-nowrap"
+                aria-label={`Read complete guide: ${article.title}`}
               >
-                <span>Read Full Article</span>
+                <span>Read Anti-Tarnish Feature</span>
                 <ArrowRight className="w-4 h-4" />
               </CleanLink>
 

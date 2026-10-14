@@ -46,6 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             setMobileMenuOpen(false);
           }}
           className="text-left group cursor-pointer focus-visible:outline-none"
+          aria-label="Glitz n Glam - Anti Tarnish Jewellery Home"
         >
           <span className="font-editorial text-2xl sm:text-3xl font-bold tracking-tight text-[#0A2619] uppercase group-hover:text-[#184E36] transition-colors">
             Glitz n Glam
@@ -66,6 +67,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onNavigateHome();
               onSelectCategory('All Articles');
             }}
+            aria-label="View all anti tarnish jewellery articles"
             className={`hover:text-[#0A2619] transition-colors cursor-pointer py-1 border-b-2 ${
               activeCategory === 'All Articles' && !currentArticleId
                 ? 'border-[#0A2619] text-[#0A2619] font-semibold'
@@ -80,6 +82,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onNavigateHome();
               onSelectCategory('Science & Innovation');
             }}
+            aria-label="The Science: anti-tarnish metallurgy and PVD technology"
             className={`hover:text-[#0A2619] transition-colors cursor-pointer py-1 border-b-2 ${
               activeCategory === 'Science & Innovation' && !currentArticleId
                 ? 'border-[#0A2619] text-[#0A2619] font-semibold'
@@ -94,6 +97,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onNavigateHome();
               onSelectCategory('Style & Layering');
             }}
+            aria-label="Style Guides: anti-tarnish necklace and ring layering"
             className={`hover:text-[#0A2619] transition-colors cursor-pointer py-1 border-b-2 ${
               activeCategory === 'Style & Layering' && !currentArticleId
                 ? 'border-[#0A2619] text-[#0A2619] font-semibold'
@@ -108,6 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onNavigateHome();
               onSelectCategory('Materials & Metals');
             }}
+            aria-label="Materials: 316L surgical stainless steel and 18K gold"
             className={`hover:text-[#0A2619] transition-colors cursor-pointer py-1 border-b-2 ${
               activeCategory === 'Materials & Metals' && !currentArticleId
                 ? 'border-[#0A2619] text-[#0A2619] font-semibold'
@@ -122,6 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onNavigateHome();
               onSelectCategory('Jewellery Care');
             }}
+            aria-label="Care Guide: how to clean and care for anti tarnish jewellery"
             className={`hover:text-[#0A2619] transition-colors cursor-pointer py-1 border-b-2 ${
               activeCategory === 'Jewellery Care' && !currentArticleId
                 ? 'border-[#0A2619] text-[#0A2619] font-semibold'
@@ -133,6 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <CleanLink
             to="/our-philosophy"
             onClick={onAboutClick}
+            aria-label="Our Philosophy: brand story and material standards"
             className="hover:text-[#0A2619] transition-colors cursor-pointer py-1 border-b-2 border-transparent hover:border-[#0A2619]"
           >
             Our Philosophy
@@ -144,7 +151,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <CleanLink
             to="/search"
             onClick={onSearchClick}
-            aria-label="Search articles"
+            aria-label="Search anti tarnish jewellery articles"
             className="flex items-center gap-2 text-xs font-medium text-[#2D4539] hover:text-[#0A2619] bg-[#F1F6F3] hover:bg-[#E3EDE7] px-3 py-2 rounded-lg transition-colors cursor-pointer"
           >
             <Search className="w-4 h-4 text-[#3B5B4C]" />
@@ -154,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <CleanLink
             to="/saved-articles"
             onClick={onBookmarksClick}
-            aria-label="Saved articles"
+            aria-label={`View saved articles reading list (${savedCount} saved)`}
             className="relative p-2 text-[#2D4539] hover:text-[#0A2619] hover:bg-[#F1F6F3] rounded-lg transition-colors cursor-pointer block"
             title="Saved Reading List"
           >
@@ -169,6 +176,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <CleanLink
             to="/our-philosophy"
             onClick={onAboutClick}
+            aria-label="Read our brand story and jewellery philosophy"
             className="hidden lg:flex items-center gap-1.5 px-4 py-2 text-xs font-semibold tracking-wide uppercase bg-[#0A2619] text-white hover:bg-[#163D2B] rounded-lg transition-colors cursor-pointer shadow-xs"
           >
             <span>Brand Story</span>
@@ -197,6 +205,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onSelectCategory('All Articles');
                 setMobileMenuOpen(false);
               }}
+              aria-label="View all 10 anti tarnish jewellery articles"
               className="text-left py-2 border-b border-[#EDF4F0] block"
             >
               All Articles (10)
@@ -208,6 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onSelectCategory('Science & Innovation');
                 setMobileMenuOpen(false);
               }}
+              aria-label="The Science: PVD technology and durability"
               className="text-left py-2 border-b border-[#EDF4F0] block"
             >
               The Science (PVD Tech)
@@ -219,6 +229,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onSelectCategory('Style & Layering');
                 setMobileMenuOpen(false);
               }}
+              aria-label="Style & Layering Guides: necklaces, rings, and earrings"
               className="text-left py-2 border-b border-[#EDF4F0] block"
             >
               Style & Layering Guides
@@ -230,6 +241,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onSelectCategory('Materials & Metals');
                 setMobileMenuOpen(false);
               }}
+              aria-label="Materials: 316L surgical stainless steel"
               className="text-left py-2 border-b border-[#EDF4F0] block"
             >
               Materials & 316L Steel
@@ -241,6 +253,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onSelectCategory('Jewellery Care');
                 setMobileMenuOpen(false);
               }}
+              aria-label="Jewellery Care Guide: cleaning and care hacks"
               className="text-left py-2 border-b border-[#EDF4F0] block"
             >
               Jewellery Care Guide
@@ -251,6 +264,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onAboutClick();
                 setMobileMenuOpen(false);
               }}
+              aria-label="About Glitz n Glam brand philosophy and standards"
               className="text-left py-2 text-[#0A2619] font-semibold block"
             >
               About Glitz n Glam

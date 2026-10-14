@@ -116,8 +116,9 @@ export const JewelleryQuiz: React.FC<JewelleryQuizProps> = ({ onSelectArticle })
             to={`/${personas[selectedPersona].recommendedSlug}`}
             onClick={() => onSelectArticle(personas[selectedPersona].recommendedSlug)}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#0A2619] text-white hover:bg-[#184E36] text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors cursor-pointer whitespace-nowrap shadow-sm"
+            aria-label={`Read recommended guide: ${personas[selectedPersona].articleTitle}`}
           >
-            <span>Read Recommended Guide</span>
+            <span>Read Recommended Jewellery Guide</span>
             <ArrowRight className="w-4 h-4" />
           </CleanLink>
         </div>

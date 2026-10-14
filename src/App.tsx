@@ -372,6 +372,7 @@ export default function App() {
                   {selectedCategory !== 'All Articles' && (
                     <button
                       onClick={() => handleSelectCategory('All Articles')}
+                      aria-label="Reset category filter to view all articles"
                       className="text-[#0A2619] font-semibold underline cursor-pointer hover:text-[#184E36]"
                     >
                       Reset filter
@@ -390,6 +391,7 @@ export default function App() {
                       key={cat}
                       to={catUrl}
                       onClick={() => handleSelectCategory(cat)}
+                      aria-label={`Browse ${cat} articles`}
                       className={`px-4 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap cursor-pointer block ${
                         isActive
                           ? 'bg-[#0A2619] text-white shadow-xs'
@@ -454,6 +456,7 @@ export default function App() {
                       handleSelectCategory('All Articles');
                       setSearchQuery('');
                     }}
+                    aria-label="View all 10 anti-tarnish jewellery articles"
                     className="px-5 py-2.5 bg-[#0A2619] text-white text-xs font-semibold uppercase tracking-wider rounded-lg cursor-pointer hover:bg-[#184E36]"
                   >
                     View All 10 Articles
