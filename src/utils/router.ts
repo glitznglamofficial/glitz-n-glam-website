@@ -27,9 +27,20 @@ export const SLUG_TO_CATEGORY_MAP: Record<string, CategoryType> = {
 
 // Legacy slug aliases for backwards-compatibility redirection
 const LEGACY_SLUG_MAP: Record<string, string> = {
-  'science-of-anti-tarnish-pvd-coating': 'science-pvd-coating',
-  'gold-plated-vs-stainless-steel-comparison': 'gold-plated-vs-stainless-steel',
-  'sweat-proof-water-resistant-gym-jewellery': 'waterproof-gym-jewellery',
+  'how-to-choose-anti-tarnish-earrings': 'how-to-choose-anti-tarnish-earrings',
+  'anti-tarnish-earrings': 'how-to-choose-anti-tarnish-earrings',
+  'science-pvd-coating': 'how-to-choose-anti-tarnish-earrings',
+  'science-of-anti-tarnish-pvd-coating': 'how-to-choose-anti-tarnish-earrings',
+
+  'gold-plated-jewellery': 'gold-plated-jewellery',
+  'gold-plated-jewellery-style-quality-care': 'gold-plated-jewellery',
+  'gold-plated-vs-stainless-steel': 'gold-plated-jewellery',
+  'gold-plated-vs-stainless-steel-comparison': 'gold-plated-jewellery',
+
+  'what-is-anti-tarnish-jewellery': 'what-is-anti-tarnish-jewellery',
+  'waterproof-gym-jewellery': 'what-is-anti-tarnish-jewellery',
+  'sweat-proof-water-resistant-gym-jewellery': 'what-is-anti-tarnish-jewellery',
+
   'perfume-lotion-moisture-damaging-jewellery': 'perfume-moisture-jewellery-care',
   'hypoallergenic-jewellery-sensitive-skin': 'hypoallergenic-jewellery-guide',
   'mastering-necklace-layering-without-tangling': 'necklace-layering-guide',

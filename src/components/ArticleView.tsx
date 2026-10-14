@@ -83,6 +83,47 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [article.id]);
 
+  // Inject Schema.org Article JSON-LD for rich snippets
+  useEffect(() => {
+    const scriptId = 'article-jsonld';
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = scriptId;
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    const schemaData = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: article.title,
+      description: article.metaDescription || article.excerpt,
+      image: [window.location.origin + article.image],
+      datePublished: article.publishDate,
+      author: {
+        '@type': 'Person',
+        name: article.author.name,
+        jobTitle: article.author.role,
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Glitz N Glam',
+      },
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': `${window.location.origin}/${article.slug}`,
+      },
+    };
+    script.text = JSON.stringify(schemaData);
+
+    return () => {
+      const existing = document.getElementById(scriptId);
+      if (existing) {
+        existing.remove();
+      }
+    };
+  }, [article.id, article.slug, article.title, article.metaDescription, article.excerpt, article.image, article.publishDate, article.author]);
+
   const handleShare = () => {
     if (navigator.clipboard) {
       const cleanUrl = `${window.location.origin}/${article.slug}`;

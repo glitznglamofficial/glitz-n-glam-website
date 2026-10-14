@@ -72,8 +72,8 @@ export default function App() {
           setIsBookmarksOpen(false);
           setIsSearchOpen(false);
           updatePageSEO(
-            `${target.title} | Glitz n Glam`,
-            target.excerpt,
+            target.metaTitle || `${target.title} | Glitz n Glam`,
+            target.metaDescription || target.excerpt,
             `/${target.slug}`
           );
           window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -89,11 +89,19 @@ export default function App() {
         setIsAboutOpen(false);
         setIsBookmarksOpen(false);
         setIsSearchOpen(false);
-        updatePageSEO(
-          `${route.category} Articles | Glitz n Glam Journal`,
-          `Curated anti-tarnish jewellery guides on ${route.category} by Glitz n Glam.`,
-          `/${CATEGORY_SLUG_MAP[route.category]}`
-        );
+        if (route.category === 'All Articles') {
+          updatePageSEO(
+            'Anti Tarnish Jewellery Articles – Tips & Style Guides',
+            'Explore our anti tarnish jewellery articles for expert styling guides, care tips, and buying advice to keep your waterproof pieces shining bright every day.',
+            `/${CATEGORY_SLUG_MAP[route.category]}`
+          );
+        } else {
+          updatePageSEO(
+            `${route.category} Articles | Glitz n Glam Journal`,
+            `Curated anti-tarnish jewellery guides on ${route.category} by Glitz n Glam.`,
+            `/${CATEGORY_SLUG_MAP[route.category]}`
+          );
+        }
         const el = document.getElementById('articles-section');
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
@@ -144,8 +152,8 @@ export default function App() {
         setIsBookmarksOpen(false);
         setIsSearchOpen(false);
         updatePageSEO(
-          'Glitz n Glam | Anti-Tarnish Jewellery Journal',
-          'Editorial blog and style guides by Glitz n Glam, exploring waterproof, sweat-resistant, and hypoallergenic 18K gold anti-tarnish jewellery.',
+          'Anti Tarnish Jewellery Articles – Tips & Style Guides',
+          'Explore our anti tarnish jewellery articles for expert styling guides, care tips, and buying advice to keep your waterproof pieces shining bright every day.',
           '/'
         );
       }
@@ -297,11 +305,11 @@ export default function App() {
                 className="font-editorial text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#0A2619] leading-[1.08] mb-6 max-w-4xl mx-auto"
                 style={{ textWrap: 'balance' }}
               >
-                Timeless 18K Gold, Engineered for Endless Wear.
+                Anti Tarnish Jewelry: Timeless 18K Gold, Engineered for Endless Wear
               </h1>
 
               <p className="text-base sm:text-xl text-[#2D4539] max-w-2xl mx-auto leading-relaxed mb-8">
-                Explore 10 curated investigations into vacuum PVD plating, 316L surgical steel, hypoallergenic comfort, and everyday luxury layering by Glitz n Glam.
+                Welcome to the definitive guide to anti tarnish jewelry by Glitz N Glam. Our curated journal uncovers the metallurgy of durable stainless steel jewellery and waterproof gold finishes, helping you style luxury anti tarnish jewellery that withstands water, sweat, and daily life.
               </p>
 
               {/* Three Pillars Summary */}
@@ -318,7 +326,7 @@ export default function App() {
                   <ShieldCheck className="w-5 h-5 text-[#0A2619] shrink-0" />
                   <div>
                     <span className="text-xs uppercase tracking-wider text-[#0A2619] font-bold block">Zero Green Skin</span>
-                    <span className="text-xs text-[#3B5B4C]">Biocompatible 316L steel</span>
+                    <span className="text-xs text-[#3B5B4C]">Stainless steel jewellery base</span>
                   </div>
                 </div>
 
@@ -326,7 +334,7 @@ export default function App() {
                   <Layers className="w-5 h-5 text-[#0A2619] shrink-0" />
                   <div>
                     <span className="text-xs uppercase tracking-wider text-[#0A2619] font-bold block">18K PVD Fusion</span>
-                    <span className="text-xs text-[#3B5B4C]">10× stronger than plating</span>
+                    <span className="text-xs text-[#3B5B4C]">Anti tarnish jewellery standard</span>
                   </div>
                 </div>
               </div>
@@ -354,7 +362,7 @@ export default function App() {
                     Complete Editorial Collection
                   </span>
                   <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#0A2619]">
-                    All 10 Journal Articles
+                    Anti Tarnish Jewellery & Stainless Steel Jewellery Journal
                   </h2>
                 </div>
 

@@ -17,9 +17,9 @@ export interface PageSeoData {
 }
 
 export const HOMEPAGE_SEO: PageSeoData = {
-  title: 'Anti-Tarnish Jewellery & Waterproof Gold | Glitz n Glam',
+  title: 'Anti Tarnish Jewellery Articles – Tips & Style Guides',
   metaDescription:
-    'Discover waterproof anti tarnish jewellery by Glitz n Glam. Real 18K gold fused on 316L surgical steel that never fades. Explore our journal and guides.',
+    'Explore our anti tarnish jewellery articles for expert styling guides, care tips, and buying advice to keep your waterproof pieces shining bright every day.',
   mainKeyword: 'anti tarnish jewellery',
   relatedKeywords: ['waterproof gold jewellery', 'hypoallergenic 18k jewellery'],
   canonicalPath: '/',
