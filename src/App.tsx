@@ -362,8 +362,11 @@ export default function App() {
                     Complete Editorial Collection
                   </span>
                   <h2 className="font-editorial text-3xl sm:text-4xl font-bold text-[#0A2619]">
-                    Anti Tarnish Jewellery & Stainless Steel Jewellery Journal
+                    Why Choose Anti-Tarnish Jewellery and Stainless Steel Jewellery?
                   </h2>
+                  <p className="text-sm text-[#2D4539] mt-2 max-w-2xl leading-relaxed">
+                    Anti-tarnish jewellery made from 316L stainless steel and 18K PVD gold plating is engineered to resist water, sweat, and oxidation without rusting, fading, or turning skin green. Unlike traditional gold-plated brass or cheap fashion accessories that deteriorate quickly, medical-grade stainless steel jewellery provides a durable, hypoallergenic foundation suitable for daily showers, workouts, and swimming.
+                  </p>
                 </div>
 
                 {/* Filter and Search Stats */}

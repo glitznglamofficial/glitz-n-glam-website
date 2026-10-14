@@ -51,11 +51,11 @@ export const JewelleryQuiz: React.FC<JewelleryQuizProps> = ({ onSelectArticle })
           <Sparkles className="w-4 h-4 text-[#E6C687]" />
           <span>Interactive Formula Finder</span>
         </div>
-        <h3 className="font-editorial text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
-          What Is Your Anti-Tarnish Jewellery Priority?
-        </h3>
-        <p className="text-sm sm:text-base text-emerald-100/90">
-          Select your everyday wear lifestyle to instantly receive curated editorial insights and care recommendations from our metallurgists.
+        <h2 className="font-editorial text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">
+          How Do You Choose the Best Anti-Tarnish Jewellery for Your Routine?
+        </h2>
+        <p className="text-sm sm:text-base text-emerald-100/90 leading-relaxed">
+          To choose the best anti-tarnish jewellery, match your daily exposure to water, sweat, and sensitive skin needs with biocompatible materials like waterproof 316L stainless steel and vacuum-fused PVD gold. Select your everyday lifestyle profile below to receive instant personalized styling tips and material recommendations.
         </p>
       </div>
 
