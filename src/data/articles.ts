@@ -75,7 +75,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "CF"
     },
     "image": "/images/jewellery_earrings_lifestyle_1791397641224.webp",
-    "imageAlt": "Pair of polished 18K gold anti tarnish earrings and delicate everyday jewellery resting on natural woven linen",
+    "imageAlt": "Polished gold anti tarnish earrings and stud jewellery resting on woven linen",
     "excerpt": "Learn how to choose anti tarnish earrings that resist water, sweat, and tarnishing. Explore surgical stainless steel bases, secure closures, and coordinated styling with anti tarnish rings.",
     "introduction": "Finding the perfect pair of anti tarnish earrings transforms your morning routine from a cautious balancing act into effortless self-expression. Traditional ear piercings are notoriously prone to tenderness, itching, and discoloration when cheap base metals react with natural skin moisture and perfume. Investing in genuine anti tarnish earrings guarantees that your ear stack stays brilliant without turning skin green or requiring constant polishing. Whether you are dressing for an early morning workout, a full day at the office, or an ocean swim, resilient ear pieces provide reliable glamour. By understanding core metallurgy and protective coatings, you can curate a lasting collection that feels weightless and stays radiant.",
     "sections": [
@@ -176,7 +176,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "MV"
     },
     "image": "/images/hero_jewellery_water_1791397599157.webp",
-    "imageAlt": "Layered waterproof 18K gold plated jewellery and stainless steel jewellery chains glistening in water ripples",
+    "imageAlt": "Layered waterproof gold plated jewellery chains glistening underwater with gentle surface ripples",
     "excerpt": "Explore our expert guide to gold plated jewellery quality, style, and care. Discover how anti tarnish jewellery and stainless steel jewellery redefine longevity and elegance.",
     "introduction": "Modern gold plated jewellery has undergone a dramatic metallurgical revolution, moving far beyond the fragile trinkets of past generations. Historically, gold-finished accessories were treated as disposable fast fashion items destined to fade, flake, and discolor within weeks of regular wear. Today, sophisticated bonding technologies and surgical-grade base metals allow fashion lovers to enjoy the sumptuous warmth of eighteen-karat gold at an accessible price point. Understanding the intricate balance between plating thickness, core alloys, and daily maintenance empowers you to choose pieces that retain their radiant luster indefinitely. This comprehensive guide walks you through the essential craftsmanship standards, versatile styling strategies, and practical care rituals that make contemporary gold pieces last.",
     "sections": [
@@ -272,7 +272,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "ML"
     },
     "image": "/images/jewellery_water_basin_clean_1791398357384.webp",
-    "imageAlt": "Clear water splashing over anti tarnish jewellery rings and chains, proving durability of jewellery for women",
+    "imageAlt": "Fresh water splashing over durable anti tarnish jewellery rings in a clean basin",
     "excerpt": "Wondering what is anti tarnish jewellery? Discover how vacuum PVD bonding and surgical steel protect artificial jewellery online and redefine jewellery for women.",
     "introduction": "If you have ever purchased a gorgeous gold chain only to watch it fade into a dull brown or turn your skin an embarrassing green, you have likely wondered: what is anti tarnish jewellery? At its core, anti-tarnish jewelry represents a transformative breakthrough in metallurgical science designed to withstand water, sweat, and daily life without losing its golden luster. Unlike traditional fashion jewelry that rapidly oxidizes in response to humidity and friction, these specialized pieces utilize impenetrable barrier coatings over biocompatible metals. This revolutionary manufacturing technique allows modern consumers to shower, exercise, and swim without removing their favorite rings, earrings, or necklaces. Understanding what is anti tarnish jewellery unlocks the secret to effortless, lifelong accessorizing that never tarnishes or causes skin reactions.",
     "sections": [
@@ -366,7 +366,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "CF"
     },
     "image": "/images/perfume_ocean_jewellery_1791717268035.webp",
-    "imageAlt": "Glass perfume spray bottle standing next to waterproof gold chains on textured coastal stone",
+    "imageAlt": "Glass perfume bottle standing beside gold chain necklaces on textured coastal stone",
     "excerpt": "Alcohol in luxury perfumes, AHA acids in body lotions, and high humidity silently destroy standard jewellery. Learn the chemical reactions behind tarnish and the golden rule of cosmetic layering.",
     "introduction": "Your daily beauty and fragrance routine is essential to feeling confident and impeccably put together each morning. Unfortunately, the luxury perfumes, rich body lotions, and active serums you adore represent a hostile chemical environment for ordinary accessories. Most people do not realize that standard fashion jewellery begins deteriorating the instant it comes into direct contact with cosmetic formulas. Understanding the chemical reactions between beauty products and metal alloys allows you to protect your favourite pieces effectively. With the right metallurgical knowledge and daily habits, your jewellery can survive your beauty rituals completely unscathed.",
     "sections": [
@@ -460,7 +460,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "CF"
     },
     "image": "/images/jewellery_earrings_lifestyle_1791397641224.webp",
-    "imageAlt": "Hypoallergenic 316L surgical steel hoop earrings with 18K gold finish worn in natural sunlight",
+    "imageAlt": "Hypoallergenic gold hoop earrings for sensitive ears displayed in warm natural sunlight",
     "excerpt": "Millions of women suffer from painful earlobe irritation caused by cheap metals. We explain the immunology of nickel contact allergies and why 316L stainless steel provides complete relief.",
     "introduction": "Few styling frustrations are more discouraging than finding the perfect pair of earrings only to endure painful, swollen earlobes within hours of wearing them. Millions of jewellery lovers around the globe silently suffer from allergic contact dermatitis, often believing their skin is simply too delicate for everyday accessories. The truth is that sensitive skin is not the underlying problem; rather, it is the toxic and reactive base metals lurking inside mass-market jewellery. Understanding the biological mechanisms behind metal allergies allows you to make informed purchases that protect your skin health. You can enjoy gorgeous, radiant earrings every day without an ounce of irritation or discomfort.",
     "sections": [
@@ -554,7 +554,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "SL"
     },
     "image": "/images/jewellery_necklace_layer_1791397626866.webp",
-    "imageAlt": "Trio of gold chain necklaces in delicate graduated lengths arranged to demonstrate tangle-free layering",
+    "imageAlt": "Graduated gold chain necklaces layered in delicate lengths to prevent tangling",
     "excerpt": "Tangled chains can ruin an otherwise flawless outfit. Learn the professional stylist rules for layering different chain textures, weights, and lengths into an effortless statement.",
     "introduction": "A thoughtfully curated necklace stack is one of the most powerful styling tools in contemporary fashion. Layering multiple gold chains instantly elevates a simple white t-shirt and blazer into an editorial, magazine-ready ensemble. Yet for many women, the dream of effortless neck layering devolves into a frustrating mess of tangled chains and knots. Chains collide, flip backward, and strangle each other as you walk through your daily routine. Fortunately, mastering the art of necklace layering is not a matter of luck, but of simple geometric rules and physical balance. Let us demystify the stylist formulas that keep your necklace stack pristine all day long.",
     "sections": [
@@ -648,7 +648,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "SL"
     },
     "image": "/images/ring_stack_lifestyle_1791398333166.webp",
-    "imageAlt": "Close-up of hands styled with a cohesive stack of textured, twisted, and classic gold band rings",
+    "imageAlt": "Hand wearing a curated stack of textured and polished gold band rings",
     "excerpt": "Transform your hands into a personal gallery. Learn how to mix bold signet rings, textured eternity bands, and minimalist micro-rings with ergonomic comfort for everyday life.",
     "introduction": "Your hands are among the most expressive and visible parts of your body, constantly engaged in conversation, work, and gesture. Styling your fingers with a curated ring stack is the ultimate subtle power move in modern fashion. When executed with intention, stacked rings transform your hands into a dynamic gallery of personal taste and sculptural elegance. Yet without a guiding artistic philosophy, haphazard ring stacks can feel heavy, clumsy, and overwhelming on your fingers. Learning the architectural principles of proportion, textural balance, and ergonomic comfort empowers you to stack rings like an elite jewelry designer. Let us explore the timeless rules of intentional hand styling.",
     "sections": [
@@ -742,7 +742,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "ER"
     },
     "image": "/images/sustainable_jewellery_sandstone_1791398345918.webp",
-    "imageAlt": "Sculptural 18K gold durable jewellery pieces resting peacefully on organic sandstone blocks",
+    "imageAlt": "Sculptural gold jewellery pieces displayed on natural sandstone blocks",
     "excerpt": "Billions of cheap accessories end up in municipal landfills every year. Discover how circular 316L stainless steel and zero-emission PVD coating are revolutionizing ethical fashion.",
     "introduction": "The global fashion conversation has rightly focused on the catastrophic environmental impact of synthetic textiles, fast fashion garments, and microplastic pollution. However, a silent and equally devastating environmental crisis lurks in the accessory aisle: disposable costume jewellery. Every year, billions of cheap earrings, necklaces, and rings are purchased for pennies, worn a handful of times, and promptly discarded. When these tarnished items end up in municipal landfills, they leach hazardous heavy metals and toxic chemicals into soil and groundwater. Embracing durable, anti-tarnish jewellery crafted with circular metallurgy is the critical next frontier in sustainable fashion. Let us examine how clean technology is rewriting the ethical future of personal adornment.",
     "sections": [
@@ -836,7 +836,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "MV"
     },
     "image": "/images/jewellery_care_botanical_1791397654041.webp",
-    "imageAlt": "Gentle cleaning setup with microfiber cloth, warm rinse dish, and gold jewellery on a calm botanical surface",
+    "imageAlt": "Jewellery cleaning setup with microfiber cloth and rinse bowl on botanical surface",
     "excerpt": "Anti-tarnish jewellery is virtually indestructible, but proper hygiene and smart storage keep it looking showroom-fresh. Learn the lukewarm water method, cleaners to avoid, and travel storage hacks.",
     "introduction": "One of the greatest joys of owning high-performance anti-tarnish jewellery is the liberating freedom from high-maintenance care routines. Traditional sterling silver demands constant, exhausting polishing sessions with smelly chemical pastes just to keep stubborn black oxidation at bay. Delicate costume jewellery falls apart the moment water touches it, requiring paranoid avoidance of daily hand washing and humidity. In contrast, modern PVD gold over surgical stainless steel is engineered to withstand everyday life effortlessly. However, maintaining that blinding showroom sparkle requires a basic understanding of hygiene and storage. Let us explore the simple, science-backed maintenance habits that keep your pieces looking brand new.",
     "sections": [
@@ -930,7 +930,7 @@ export const ARTICLES: Article[] = [
       "avatarInitials": "ML"
     },
     "image": "/images/resort_statement_earrings_1791398369291.webp",
-    "imageAlt": "Bold gold drop earrings catching warm sunset light on an ocean resort balcony",
+    "imageAlt": "Statement gold drop earrings reflecting warm sunset light on an oceanfront balcony",
     "excerpt": "Modern women need accessories that adapt to dynamic, non-stop schedules. Discover the curated four-piece capsule that moves effortlessly from corporate presentations to beachside cabanas.",
     "introduction": "The modern woman's lifestyle no longer fits into rigid, neatly separated boxes. On any given Tuesday, you might lead an executive presentation, head straight to a high-intensity pilates session, and finish with sunset cocktails at a seaside terrace. Packing separate sets of delicate jewellery for every social setting is tedious, impractical, and outdated. You need versatile, high-performance accessories that seamlessly adapt to every chapter of your dynamic day. By building an intelligent twenty-four hour jewellery capsule, you achieve effortless elegance that looks stunning in every room you enter. Let us explore the art of versatile styling for the unstoppable multi-hyphenate lifestyle.",
     "sections": [

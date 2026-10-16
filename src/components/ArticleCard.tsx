@@ -29,7 +29,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({
           <source srcSet={article.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
           <img
             src={article.image}
-            alt={article.imageAlt}
+            alt={article.imageAlt || article.title}
             className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             referrerPolicy="no-referrer"
             loading="lazy"

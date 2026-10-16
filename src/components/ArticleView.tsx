@@ -310,7 +310,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
             <source srcSet={article.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
             <img
               src={article.image}
-              alt={article.imageAlt}
+              alt={article.imageAlt || article.title}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
               loading="eager"
@@ -649,7 +649,7 @@ export const ArticleView: React.FC<ArticleViewProps> = ({
                     <source srcSet={rel.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
                     <img
                       src={rel.image}
-                      alt={rel.imageAlt}
+                      alt={rel.imageAlt || rel.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                       loading="lazy"
