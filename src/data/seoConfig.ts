@@ -34,6 +34,27 @@ export const ARTICLE_SEO_MAP: Record<string, SEOEntry> = {
     canonicalPath: '/what-is-anti-tarnish-jewellery',
     headline: 'What Is Anti-Tarnish Jewellery?',
   },
+  'recipes': {
+    title: 'Jewellery Care Recipes & Cleaning Formulas | Glitz N Glam',
+    description:
+      'Explore jewellery care recipes, cleaning formulas, and maintenance tips from Glitz N Glam to keep anti-tarnish pieces sparkling.',
+    canonicalPath: '/recipes',
+    headline: 'Jewellery Care Recipes & Cleaning Formulas',
+  },
+  'heritage': {
+    title: 'Jewellery Heritage & Materials Guide | Glitz N Glam',
+    description:
+      'Discover the heritage of durable jewellery, 18K gold finishes, and hypoallergenic metals curated by Glitz N Glam.',
+    canonicalPath: '/heritage',
+    headline: 'Jewellery Heritage & Materials Guide',
+  },
+  'techniques': {
+    title: 'Anti Tarnish Techniques & Innovation | Glitz N Glam',
+    description:
+      'Learn advanced anti tarnish techniques, PVD bonding science, and waterproof jewellery innovation from Glitz N Glam.',
+    canonicalPath: '/techniques',
+    headline: 'Anti Tarnish Techniques & Innovation',
+  },
 };
 
 /**

@@ -14,6 +14,7 @@ import { AboutModal } from './components/AboutModal';
 import { JewelleryQuiz } from './components/JewelleryQuiz';
 import { Footer } from './components/Footer';
 import { CleanLink } from './components/CleanLink';
+import { ImageAltTooltip } from './components/ImageAltTooltip';
 import { 
   parseCurrentRoute, 
   pushRoute, 
@@ -512,6 +513,9 @@ export default function App() {
         isOpen={isAboutOpen}
         onClose={closeAbout}
       />
+
+      {/* Universal Image Alt Hover Tooltip Overlay */}
+      <ImageAltTooltip />
     </div>
   );
 }

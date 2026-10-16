@@ -23,6 +23,9 @@ export const SLUG_TO_CATEGORY_MAP: Record<string, CategoryType> = {
   'materials-and-metals': 'Materials & Metals',
   'everyday-staples': 'Everyday Staples',
   'jewellery-care': 'Jewellery Care',
+  'recipes': 'Jewellery Care',
+  'heritage': 'Materials & Metals',
+  'techniques': 'Science & Innovation',
 };
 
 // Legacy slug aliases for backwards-compatibility redirection

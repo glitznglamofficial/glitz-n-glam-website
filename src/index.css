@@ -25,3 +25,13 @@
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
+/* Image Alt Text Hover Effects & Tooltip Styling */
+img[alt]:not([alt=""]) {
+  transition: filter 0.3s ease;
+}
+
+/* Ensure smooth transition for all image hover overlays */
+[role="tooltip"] {
+  will-change: opacity, transform;
+}
+
