@@ -115,7 +115,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                       <source srcSet={art.image.replace(/\.(jpg|jpeg|png)$/, '.webp')} type="image/webp" />
                       <img
                         src={art.image}
-                        alt=""
+                        alt={art.imageAlt}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
                         loading="lazy"
